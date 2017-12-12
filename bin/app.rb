@@ -7,16 +7,11 @@ set :public_folder, "static"
 set :views, "views"
 
 get '/' do
-  # Can create an  instance of a pencil and require input from the user on the browser. The input can be used to update the paper class then could return the writing on the paper class to the browser.
-  return "Hello Stephen"
-end
-
-get '/1/' do
   # Creates a form that gets two parameters and makes them available to the post command.
   erb :step1
 end
 
-post '/1/' do
+post '/' do
   # Takes the parameters from made available by the form.
   $word1 = params[:word1] || "Word 1"
   $word2 = params[:word2] || "Word 2"
@@ -24,11 +19,11 @@ post '/1/' do
   erb :step2, :locals => {'word1' => $word1, 'word2' => $word2}
 end
 
-get '/2/' do
+get '/1/' do
   erb :step2
 end
 
-post '/2/' do
+post '/1/' do
   # Takes the parameters from made available by the form.
   $word3 = params[:word3] || "Word 3"
   $word4 = params[:word4] || "Word 4"
