@@ -11,15 +11,28 @@ get '/' do
   return "Hello Stephen"
 end
 
-get '/hello/' do
+get '/1/' do
   # Creates a form that gets two parameters and makes them available to the post command.
-  erb :hello_form
+  erb :step1
 end
 
-post '/hello/' do
+post '/1/' do
   # Takes the parameters from made available by the form.
-  greeting = params[:greeting] || "Hi There"
-  name = params[:name] || "Nobody"
+  $word1 = params[:word1] || "Word 1"
+  $word2 = params[:word2] || "Word 2"
   # Renders the index view with the parameters.
-  erb :index, :locals => {'greeting' => greeting, 'name' => name}
+  erb :step2, :locals => {'word1' => $word1, 'word2' => $word2}
+end
+
+get '/2/' do
+  erb :step2
+end
+
+post '/2/' do
+  # Takes the parameters from made available by the form.
+  $word3 = params[:word3] || "Word 3"
+  $word4 = params[:word4] || "Word 4"
+  # Renders the index view with the parameters.
+  erb :step3, :locals => {'word1' => $word1, 'word2' => $word2,
+                           'word3' => $word3, 'word4' => $word4}
 end
