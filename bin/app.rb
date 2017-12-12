@@ -1,5 +1,6 @@
 require 'sinatra'
 
+# This sets up my server on port 8081
 set :port, 8081
 set :static, true
 set :public_folder, "static"
@@ -10,7 +11,7 @@ get '/' do
   return "Hello world"
 end
 
-get '/hello/' do
+get '/hello' do
   # Creates a form that gets two parameters and makes them available to the post command.
   erb :hello_form
 end
