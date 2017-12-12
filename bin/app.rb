@@ -8,10 +8,10 @@ set :views, "views"
 
 get '/' do
   # Can create an  instance of a pencil and require input from the user on the browser. The input can be used to update the paper class then could return the writing on the paper class to the browser.
-  return "Hello world"
+  return "Hello Stephen"
 end
 
-get '/hello' do
+get '/hello/' do
   # Creates a form that gets two parameters and makes them available to the post command.
   erb :hello_form
 end
