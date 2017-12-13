@@ -28,17 +28,17 @@ class PENCIL
     @lead = sizepencil
 
     if sizepencil == ".5"
+      @originallength = 30
+      @length = 30
+    else
       @originallength = 50
       @length = 50
-    else
-      @originallength = 70
-      @length = 70
     end
 
     @length = (@length - $answer.length)
     $paper = "#{$paper} #{$answer}"
     $paper = $paper.strip
-    $nicework = "Nice work! Here's what you have written so far in your notebook: #{$paper}. This pencil is able to write #{@length}
+    $nicework = "Nice work! Here's what you have written so far on the paper: '#{$paper}'. This pencil is able to write #{@length}
                  more characters until it runs out of lead. This size #{@lead} pencil originally could write #{@originallength} characters."
   end
 

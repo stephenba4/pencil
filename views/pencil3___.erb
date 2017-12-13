@@ -5,12 +5,17 @@
 
 <form action="/2/" method="POST">
 
-  Would you like to create BluePencil with .5 or .7 lead? (Type .5 or .7)
-  <input type="text" name="lead">
+  Would you like to create BluePencil with .5 or .7 lead? (Type .5 to be able to write up to 30 characters or .7 to be able to write up to 50 characters.)
+  <br>
+  <input type="radio" id=".5" name="lead" value=".5">
+  <label for=".5"> .5 </label>
+  <input type="radio" id=".7" name="lead" value=".7">
+  <label for=".7"> .7 </label>
+  <br>
 
   Write some words on the paper with BluePencil:
   <input type="text" name="answer">
 
   <input type="submit">
-  
+
 </form>
