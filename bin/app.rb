@@ -158,3 +158,5 @@ post '/3/' do
                                'greenoriginallength' => $greenoriginallength,
                                'greenlength' => $greenlength}
 end
+
+$paper = ""
