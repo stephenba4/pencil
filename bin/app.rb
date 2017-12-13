@@ -58,7 +58,7 @@ end
 
 get '/' do
   # Creates a form that gets parameters and makes them available to the post command.
-  erb :pencil1___
+  erb :pencil1
 end
 
 post '/' do
@@ -73,7 +73,7 @@ post '/' do
   $orangelength = $orangepencil.length
 
   # Renders the index view with the parameters.
-  erb :pencil2___, :locals => {'paper' => $paper, 'nicework' => $nicework, 'orangelead' => $orangelead,
+  erb :pencil2, :locals => {'paper' => $paper, 'nicework' => $nicework, 'orangelead' => $orangelead,
                                'orangeoriginallength' => $orangeoriginallength,
                                'orangelength' => $orangelength}
 end
@@ -81,7 +81,7 @@ end
 
 get '/1/' do
   # Creates a form that gets parameters and makes them available to the post command.
-  erb :pencil2___
+  erb :pencil2
 end
 
 post '/1/' do
@@ -96,7 +96,7 @@ post '/1/' do
   $redlength = $redpencil.length
 
   # Renders the next view with the parameters.
-  erb :pencil3___, :locals => {'paper' => $paper, 'nicework' => $nicework, 'orangelead' => $orangelead,
+  erb :pencil3, :locals => {'paper' => $paper, 'nicework' => $nicework, 'orangelead' => $orangelead,
                                'orangeoriginallength' => $orangeoriginallength,
                                'orangelength' => $orangelength, 'redlead' => $redlead,
                                'redoriginallength' => $redoriginallength,
@@ -106,7 +106,7 @@ end
 
 get '/2/' do
   # Creates a form that gets parameters and makes them available to the post command.
-  erb :pencil3___
+  erb :pencil3
 end
 
 post '/2/' do
@@ -121,7 +121,7 @@ post '/2/' do
   $bluelength = $bluepencil.length
 
   # Renders the next view with the parameters.
-  erb :pencil4___, :locals => {'paper' => $paper, 'nicework' => $nicework, 'orangelead' => $orangelead,
+  erb :pencil4, :locals => {'paper' => $paper, 'nicework' => $nicework, 'orangelead' => $orangelead,
                                'orangeoriginallength' => $orangeoriginallength,
                                'orangelength' => $orangelength, 'redlead' => $redlead,
                                'redoriginallength' => $redoriginallength,
@@ -133,7 +133,7 @@ end
 
 get '/3/' do
   # Creates a form that gets parameters and makes them available to the post command.
-  erb :pencil4___
+  erb :pencil4
 end
 
 post '/3/' do
@@ -148,7 +148,7 @@ post '/3/' do
   $greenlength = $greenpencil.length
 
   # Renders the next view with the parameters.
-  erb :pencil5___, :locals => {'paper' => $paper, 'nicework' => $nicework, 'orangelead' => $orangelead,
+  erb :pencil5, :locals => {'paper' => $paper, 'nicework' => $nicework, 'orangelead' => $orangelead,
                                'orangeoriginallength' => $orangeoriginallength,
                                'orangelength' => $orangelength, 'redlead' => $redlead,
                                'redoriginallength' => $redoriginallength,
