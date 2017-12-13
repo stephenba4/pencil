@@ -6,34 +6,155 @@ set :static, true
 set :public_folder, "static"
 set :views, "views"
 
+# This creates a global paper string variable that each instance of the PENCIL class will
+# write on in a way that all PENCILs' words will be seen together on the paper.
+$paper = ""
+
+# This is the class PENCIL that will be instantiated by four different colored pencils
+class PENCIL
+
+  def initialize()
+    @originallength
+    @length
+    @lead
+  end
+
+  attr_reader   :originallength
+  attr_accessor :length
+  attr_accessor :lead
+
+  def write(paper, answer, sizepencil)
+
+    @lead = sizepencil
+
+    if sizepencil == ".5"
+      @originallength = 50
+      @length = 50
+    else
+      @originallength = 70
+      @length = 70
+    end
+
+    @length = (@length - $answer.length)
+    $paper = "#{$paper} #{$answer}"
+    $paper = $paper.strip
+    $nicework = "Nice work! Here's what you have written so far in your notebook: #{$paper}. This pencil is able to write #{@length}
+                 more characters until it runs out of lead. This size #{@lead} pencil originally could write #{@originallength} characters."
+  end
+
+  def lead()
+    @lead
+  end
+
+  def originallength()
+    @originallength
+  end
+
+  def length()
+    @length
+  end
+
+end
 
 get '/' do
-  # Creates a form that gets two parameters and makes them available to the post command.
-  erb :step1
+  # Creates a form that gets parameters and makes them available to the post command.
+  erb :pencil1___
 end
 
 post '/' do
-  # Takes the parameters from made available by the form.
-  $word1 = params[:word1] || "Word 1"
-  $word2 = params[:word2] || "Word 2"
+  # Takes the parameters made available by the form.
+  $lead = params[:lead] || ".7"
+  $answer = params[:answer] || "Answer 1"
 
-  $myPencil = pencil.new()
-  pencil.write($word1)
-
+  $orangepencil = PENCIL.new()
+  $orangepencil.write($paper, $answer, $lead)
+  $orangelead = $orangepencil.lead
+  $orangeoriginallength = $orangepencil.originallength
+  $orangelength = $orangepencil.length
 
   # Renders the index view with the parameters.
-  erb :step2, :locals => {'word1' => $word1, 'word2' => $word2}
+  erb :pencil2___, :locals => {'paper' => $paper, 'nicework' => $nicework, 'orangelead' => $orangelead,
+                               'orangeoriginallength' => $orangeoriginallength,
+                               'orangelength' => $orangelength}
 end
 
+
 get '/1/' do
-  erb :step2
+  # Creates a form that gets parameters and makes them available to the post command.
+  erb :pencil2___
 end
 
 post '/1/' do
-  # Takes the parameters from made available by the form.
-  $word3 = params[:word3] || "Word 3"
-  $word4 = params[:word4] || "Word 4"
-  # Renders the index view with the parameters.
-  erb :step3, :locals => {'word1' => $word1, 'word2' => $word2,
-                           'word3' => $word3, 'word4' => $word4}
+  # Takes the parameters made available by the form.
+  $lead = params[:lead] || ".7"
+  $answer = params[:answer] || "Answer 2"
+
+  $redpencil = PENCIL.new()
+  $redpencil.write($paper, $answer, $lead)
+  $redlead = $redpencil.lead
+  $redoriginallength = $redpencil.originallength
+  $redlength = $redpencil.length
+
+  # Renders the next view with the parameters.
+  erb :pencil3___, :locals => {'paper' => $paper, 'nicework' => $nicework, 'orangelead' => $orangelead,
+                               'orangeoriginallength' => $orangeoriginallength,
+                               'orangelength' => $orangelength, 'redlead' => $redlead,
+                               'redoriginallength' => $redoriginallength,
+                               'redlength' => $redlength}
+end
+
+
+get '/2/' do
+  # Creates a form that gets parameters and makes them available to the post command.
+  erb :pencil3___
+end
+
+post '/2/' do
+  # Takes the parameters made available by the form.
+  $lead = params[:lead] || ".7"
+  $answer = params[:answer] || "Answer 3"
+
+  $bluepencil = PENCIL.new()
+  $bluepencil.write($paper, $answer, $lead)
+  $bluelead = $bluepencil.lead
+  $blueoriginallength = $bluepencil.originallength
+  $bluelength = $bluepencil.length
+
+  # Renders the next view with the parameters.
+  erb :pencil4___, :locals => {'paper' => $paper, 'nicework' => $nicework, 'orangelead' => $orangelead,
+                               'orangeoriginallength' => $orangeoriginallength,
+                               'orangelength' => $orangelength, 'redlead' => $redlead,
+                               'redoriginallength' => $redoriginallength,
+                               'redlength' => $redlength, 'bluelead' => $bluelead,
+                               'blueoriginallength' => $blueoriginallength,
+                               'bluelength' => $bluelength}
+end
+
+
+get '/3/' do
+  # Creates a form that gets parameters and makes them available to the post command.
+  erb :pencil4___
+end
+
+post '/3/' do
+  # Takes the parameters made available by the form.
+  $lead = params[:lead] || ".7"
+  $answer = params[:answer] || "Answer 4"
+
+  $greenpencil = PENCIL.new()
+  $greenpencil.write($paper, $answer, $lead)
+  $greenlead = $greenpencil.lead
+  $greenoriginallength = $greenpencil.originallength
+  $greenlength = $greenpencil.length
+
+  # Renders the next view with the parameters.
+  erb :pencil5___, :locals => {'paper' => $paper, 'nicework' => $nicework, 'orangelead' => $orangelead,
+                               'orangeoriginallength' => $orangeoriginallength,
+                               'orangelength' => $orangelength, 'redlead' => $redlead,
+                               'redoriginallength' => $redoriginallength,
+                               'redlength' => $redlength, 'bluelead' => $bluelead,
+                               'blueoriginallength' => $blueoriginallength,
+                               'bluelength' => $bluelength, 'greenlead' => $greenlead,
+                               'greenoriginallength' => $greenoriginallength,
+                               'greenlength' => $greenlength}
 end
