@@ -57,6 +57,8 @@ class PENCIL
 end
 
 get '/' do
+  # This creates a global paper string variable that each instance of the PENCIL class will write on in a way that all PENCILs' words will be seen together on the paper.
+  $paper = ""
   # Creates a form that gets parameters and makes them available to the post command.
   erb :pencil1
 end
@@ -157,6 +159,5 @@ post '/3/' do
                                'bluelength' => $bluelength, 'greenlead' => $greenlead,
                                'greenoriginallength' => $greenoriginallength,
                                'greenlength' => $greenlength}
-end
 
-$paper = ""
+end
