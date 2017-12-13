@@ -6,6 +6,7 @@ set :static, true
 set :public_folder, "static"
 set :views, "views"
 
+
 get '/' do
   # Creates a form that gets two parameters and makes them available to the post command.
   erb :step1
@@ -15,6 +16,11 @@ post '/' do
   # Takes the parameters from made available by the form.
   $word1 = params[:word1] || "Word 1"
   $word2 = params[:word2] || "Word 2"
+
+  $myPencil = pencil.new()
+  pencil.write($word1)
+
+
   # Renders the index view with the parameters.
   erb :step2, :locals => {'word1' => $word1, 'word2' => $word2}
 end
