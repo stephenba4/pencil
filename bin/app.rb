@@ -6,10 +6,6 @@ set :static, true
 set :public_folder, "static"
 set :views, "views"
 
-# This creates a global paper string variable that each instance of the PENCIL class will
-# write on in a way that all PENCILs' words will be seen together on the paper.
-$paper = ""
-
 # This is the class PENCIL that will be instantiated by four different colored pencils
 class PENCIL
 
@@ -27,19 +23,18 @@ class PENCIL
 
     @lead = sizepencil
 
-    if sizepencil == ".5"
-      @originallength = 30
-      @length = 30
+    if sizepencil == ".5mm"
+      @originallength = 500
+      @length = 500
     else
-      @originallength = 50
-      @length = 50
+      @originallength = 700
+      @length = 700
     end
 
     @length = (@length - $answer.length)
     $paper = "#{$paper} #{$answer}"
     $paper = $paper.strip
-    $nicework = "Nice work! Here's what you have written so far on the paper: '#{$paper}'. This pencil is able to write #{@length}
-                 more characters until it runs out of lead. This size #{@lead} pencil originally could write #{@originallength} characters."
+    $nicework = "Nice work! Here's what you have written so far on the paper: '#{$paper}'. This pencil is able to write #{@length} more characters until it runs out of lead. This size #{@lead} pencil originally could write #{@originallength} characters."
   end
 
   def lead()
@@ -65,8 +60,8 @@ end
 
 post '/' do
   # Takes the parameters made available by the form.
-  $lead = params[:lead] || ".7"
-  $answer = params[:answer] || "Answer 1"
+  $lead = params[:lead]
+  $answer = params[:answer]
 
   $orangepencil = PENCIL.new()
   $orangepencil.write($paper, $answer, $lead)
@@ -88,8 +83,8 @@ end
 
 post '/1/' do
   # Takes the parameters made available by the form.
-  $lead = params[:lead] || ".7"
-  $answer = params[:answer] || "Answer 2"
+  $lead = params[:lead]
+  $answer = params[:answer]
 
   $redpencil = PENCIL.new()
   $redpencil.write($paper, $answer, $lead)
@@ -113,8 +108,8 @@ end
 
 post '/2/' do
   # Takes the parameters made available by the form.
-  $lead = params[:lead] || ".7"
-  $answer = params[:answer] || "Answer 3"
+  $lead = params[:lead]
+  $answer = params[:answer]
 
   $bluepencil = PENCIL.new()
   $bluepencil.write($paper, $answer, $lead)
@@ -140,8 +135,8 @@ end
 
 post '/3/' do
   # Takes the parameters made available by the form.
-  $lead = params[:lead] || ".7"
-  $answer = params[:answer] || "Answer 4"
+  $lead = params[:lead]
+  $answer = params[:answer]
 
   $greenpencil = PENCIL.new()
   $greenpencil.write($paper, $answer, $lead)
