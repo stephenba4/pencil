@@ -1,4 +1,4 @@
-This project focusses on the folder structure, types of files, code, and technologies that are necessary to set up a web application using Ruby and HTML. There is a front-end and back-end that communicate utilizing a technology called Sinatra, which offers a server. This project takes input from the user interface, passes it to the back-end where it is manipulated, and then it is passed back to the user interface where it is viewable. Below are the steps to utilize this project.
+This project focusses on the folder structure, types of files, code, and technologies that are necessary to set up a web application using Ruby and HTML. There is a front-end and back-end that communicate utilizing a technology called Sinatra, which offers a server. This project takes input from the user interface, passes it to the back-end where it is manipulated and ultimately sorted in a report, and then it is passed back to the user interface where it is viewable. This project utilizes strings, arrays, classes, algorithms such as a sorting algorithm and more. Below are the steps to utilize this project.
 
 Steps to run the Pencil project on your local machine:
 
