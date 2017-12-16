@@ -32,6 +32,7 @@ class PENCIL
     end
 
     @length = (@length - $answer.length)
+
     $nicework = "Nice work! Here's what you have written so far on the paper: " "<font color='orange'>" "#{$orangeanswer}" "</font>" "<font color='red'>" " #{$redanswer}" "</font>" "<font color='blue'>" " #{$blueanswer}" "</font>" "<font color='green'>" " #{$greenanswer}" "</font>" ". This pencil is able to write #{@length} more characters until it runs out of lead. This size #{@lead} pencil originally could write #{@originallength} characters."
   end
 
