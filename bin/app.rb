@@ -69,7 +69,10 @@ end
 
 get '/' do
   # This creates a global paper string variable that each instance of the PENCIL class will write on in a way that all PENCILs' words will be seen together on the paper.
-  $paper = ""
+  $orangeanswer = ""
+  $redanswer = ""
+  $blueanswer = ""
+  $greenanswer = ""
   # Creates a form that gets parameters and makes them available to the post command.
   erb :pencil1
 end
@@ -93,7 +96,7 @@ post '/' do
   $orangesortedstring = $orangesortclass.string
 
   # Renders the index view with the parameters.
-  erb :pencil2, :locals => {'paper' => $paper, 'nicework' => $nicework, 'orangelead' => $orangelead, 'orangeoriginallength' => $orangeoriginallength, 'orangelength' => $orangelength, 'orangeanswer' => $orangeanswer, 'orangesortedstring' => $orangesortedstring}
+  erb :pencil2, :locals => {'nicework' => $nicework, 'orangelead' => $orangelead, 'orangeoriginallength' => $orangeoriginallength, 'orangelength' => $orangelength, 'orangeanswer' => $orangeanswer, 'orangesortedstring' => $orangesortedstring}
 end
 
 
@@ -121,7 +124,7 @@ post '/1/' do
   $redsortedstring = $redsortclass.string
 
   # Renders the next view with the parameters.
-  erb :pencil3, :locals => {'paper' => $paper, 'nicework' => $nicework, 'redlead' => $redlead, 'redoriginallength' => $redoriginallength, 'redlength' => $redlength, 'redanswer' => $redanswer, 'redsortedstring' => $redsortedstring}
+  erb :pencil3, :locals => {'nicework' => $nicework, 'redlead' => $redlead, 'redoriginallength' => $redoriginallength, 'redlength' => $redlength, 'redanswer' => $redanswer, 'redsortedstring' => $redsortedstring}
 end
 
 
@@ -149,7 +152,7 @@ post '/2/' do
   $bluesortedstring = $bluesortclass.string
 
   # Renders the next view with the parameters.
-  erb :pencil4, :locals => {'paper' => $paper, 'nicework' => $nicework, 'bluelead' => $bluelead, 'blueoriginallength' => $blueoriginallength, 'bluelength' => $bluelength, 'blueanswer' => $blueanswer, 'bluesortedstring' => $bluesortedstring}
+  erb :pencil4, :locals => {'nicework' => $nicework, 'bluelead' => $bluelead, 'blueoriginallength' => $blueoriginallength, 'bluelength' => $bluelength, 'blueanswer' => $blueanswer, 'bluesortedstring' => $bluesortedstring}
 end
 
 
@@ -177,6 +180,6 @@ post '/3/' do
   $greensortedstring = $greensortclass.string
 
   # Renders the next view with the parameters.
-  erb :pencil5, :locals => {'paper' => $paper, 'nicework' => $nicework, 'greenlead' => $greenlead, 'greenoriginallength' => $greenoriginallength, 'greenlength' => $greenlength, 'greenanswer' => $greenanswer, 'greensortedstring' => $greensortedstring}
+  erb :pencil5, :locals => {'nicework' => $nicework, 'greenlead' => $greenlead, 'greenoriginallength' => $greenoriginallength, 'greenlength' => $greenlength, 'greenanswer' => $greenanswer, 'greensortedstring' => $greensortedstring}
 
 end
